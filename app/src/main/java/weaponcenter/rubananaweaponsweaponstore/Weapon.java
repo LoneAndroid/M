@@ -1,10 +1,12 @@
 package weaponcenter.rubananaweaponsweaponstore;
 
+import java.io.Serializable;
+
 /**
  * Created by MONROZE! on 12/3/2316.
  */
-public class Weapon {
-    String model;
+public class Weapon implements Serializable {
+    String model;   // title
     int ценаВМежМировойПятерочке;
     int ex;
 

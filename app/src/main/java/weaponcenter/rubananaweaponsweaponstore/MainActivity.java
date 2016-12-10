@@ -50,6 +50,38 @@ public class MainActivity extends AppCompatActivity {
         Adapturus adapter = new Adapturus(this, itemLayout, оружие);
         listView.setAdapter(adapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+          @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+              Weapon  выбранноеОружие = оружие[position];
+              Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+              intent.putExtra("ОРУЖИЕ",выбранноеОружие);
+              startActivity(intent);
+          }
+        });
+
+        String[] ex = new String[] {
+                "https://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+                ,"http://"
+
+        };
+
 
 
 

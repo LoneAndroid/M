@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import static java.security.AccessController.getContext;
 import static weaponcenter.rubananaweaponsweaponstore.R.id.textView;
 
@@ -34,10 +36,16 @@ public class Adapturus extends ArrayAdapter {
         TextView textView = (TextView) view.findViewById(R.id.textView2);
         textView.setText(weapon.model);
 
+        TextView textViewW = (TextView) view.findViewById(R.id.textView3);
+        textViewW.setText(String.valueOf(weapon.ценаВМежМировойПятерочке));
+
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView2);
         imageView.setImageResource(weapon.ex);
 
-        // возращаем созданный элементик
+        ImageView imageView = (ImageView) viewfindViewById(R.id.imageView2);
+        Picasso.with(getContext()).load(Weapon.ex).fit().centerCrop().into
+
+        // возращаем созданный элементик Огня
         return view;
     }
 
