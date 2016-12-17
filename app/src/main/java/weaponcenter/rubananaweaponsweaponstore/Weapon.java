@@ -3,17 +3,17 @@ package weaponcenter.rubananaweaponsweaponstore;
 import java.io.Serializable;
 
 /**
- * Created by MONROZE! on 12/3/2316.
+ * Created by Chaos! on 12/3/2316.
  */
 public class Weapon implements Serializable {
     String model;   // title
     int ценаВМежМировойПятерочке;
-    int ex;
+    String foto;
 
-    public Weapon(String model, int ценаВМежМировойПятерочке, int ex) {
+    public Weapon(String model, int ценаВМежМировойПятерочке, String foto) {
         this.model = model;
         this.ценаВМежМировойПятерочке = ценаВМежМировойПятерочке;
-        this.ex = ex;
+        this.foto = foto;
 
 
     }

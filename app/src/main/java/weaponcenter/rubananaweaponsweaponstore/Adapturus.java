@@ -40,12 +40,16 @@ public class Adapturus extends ArrayAdapter {
         textViewW.setText(String.valueOf(weapon.ценаВМежМировойПятерочке));
 
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView2);
-        imageView.setImageResource(weapon.ex);
+        if (!TextUtils.isEmpty(weapon.foto)) {
+            Picasso.with(getContext())
+                    .load(weapon.foto)
+                    .fit()
+                    .into(imageView);
+        }
 
-        ImageView imageView = (ImageView) viewfindViewById(R.id.imageView2);
-        Picasso.with(getContext()).load(Weapon.ex).fit().centerCrop().into
+//        ImageView pistolImaageView = (ImageView) findViewById(R.pistol);
 
-        // возращаем созданный элементик Огня
+        // возращаем созданный элементик Огня, Земли, Воды и Воздуха.
         return view;
     }
 
