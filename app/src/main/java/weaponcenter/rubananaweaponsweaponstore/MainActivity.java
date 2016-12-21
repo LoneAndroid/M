@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,6 +15,25 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     Weapon[] оружие;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // создаём меню
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.mainmenu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.sort_item:
+                return true;
+            default:
+                return true;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,29 +67,29 @@ public class MainActivity extends AppCompatActivity {
         };
 
         оружие = new Weapon[23];
-        оружие[0] = new Weapon("Винчестер 'Шерлок'", 450, fotos[0]);
-        оружие[1] = new Weapon("Сверчек Офисный", 50, fotos[1]);
-        оружие[2] = new Weapon("Турболазер 'Ледокол'", 1685, fotos[2]);
-        оружие[3] = new Weapon("АнтиДалек 'ДокторКто'", 1200, fotos[3] );
-        оружие[4] = new Weapon("Н-винтовка Мк1+Мк2", 4250, fotos[4]);
-        оружие[5] = new Weapon("АнтиДалек фермерский", 125, fotos[5]);
-        оружие[6] = new Weapon("Лазерная Штурмовая/окопная винтовка ", 1245, fotos[6]);
-        оружие[7] = new Weapon("Футур Револьвер", 680, fotos[7]);
-        оружие[8] = new Weapon("GN-808", 1100, fotos[8]);
-        оружие[9] = new Weapon("Снайперский турболазер", 1850, fotos[9]);
-        оружие[10] = new Weapon("ОФИ 'Оффи'", 950, fotos[10]);
-        оружие[11] = new Weapon("XTRZ-435149", 860, fotos[11]);
-        оружие[12] = new Weapon("CDI 'Контрабандист'", 735, fotos[12]);
-        оружие[13] = new Weapon("Плазменная пушка 'Makarov'", 2400, fotos[13]);
-        оружие[14] = new Weapon("Пучковый бластер+Пульсар", 2055, fotos[14]);
-        оружие[15] = new Weapon("Лазерная снайперская винтовка", 1780, fotos[15]);
-        оружие[16] = new Weapon("Плазменная снайперская винтовка 'SVD'", 5200, fotos[16]);
-        оружие[17] = new Weapon("Гвардейский клинок Литии", 8000, fotos[17]);
-        оружие[18] = new Weapon("Клинок Древних Родонтинов- рассы первого поколения", 120000, fotos[18]);
-        оружие[19] = new Weapon("Кристальный клинок АстроШумеров", 4500, fotos[19]);
-        оружие[20] = new Weapon("Клинок СпэйсЭльфов", 9300, fotos[20]);
-        оружие[21] = new Weapon("Меч Темной материи", 50000, fotos[21]);
-        оружие[22] = new Weapon("Шокер для Крысолюдов", 20, fotos[22]);
+        оружие[0] = new Weapon("Винчестер 'Шерлок'", 450, fotos[0], "Продавец-Тетя Наташа");
+        оружие[1] = new Weapon("Сверчек Офисный", 50, fotos[1], "Продавец-Уилл Смит");
+        оружие[2] = new Weapon("Турболазер 'Ледокол'", 1685, fotos[2], "Продавец-Джэймс Рейнор");
+        оружие[3] = new Weapon("АнтиДалек 'ДокторКто'", 1200, fotos[3], "Продавец-Доктор Кто Одиннадцатый");
+        оружие[4] = new Weapon("Н-винтовка Мк1+Мк2", 4250, fotos[4], "Продавец-Андрей67");
+        оружие[5] = new Weapon("АнтиДалек фермерский", 125, fotos[5], "Продавец-Фермер");
+        оружие[6] = new Weapon("Лазерная Штурмовая/окопная винтовка ", 1245, fotos[6], "Продавец-Штурмовик");
+        оружие[7] = new Weapon("Футур Револьвер", 680, fotos[7], "Продавец-Футур Ковбой");
+        оружие[8] = new Weapon("GN-808", 1100, fotos[8], "Продавец-Лакки Оферсон");
+        оружие[9] = new Weapon("Снайперский турболазер", 1850, fotos[9], "Продавец-Турболазерный Снайпер");
+        оружие[10] = new Weapon("ОФИ 'Оффи'", 950, fotos[10], "Продавец-Завхоз оружейного склада ГардБлэйд индастриз");
+        оружие[11] = new Weapon("XTRZ-435149", 860, fotos[11], "Продавец-Завхоз оружейного склада ГардБлэйд индастриз");
+        оружие[12] = new Weapon("CDI 'Контрабандист'", 735, fotos[12], "Продавец-Мэр Кэрг Одноглазый-Кривозубый-Одногогий-Однорукий-Лысый-Лис-Прохвост");
+        оружие[13] = new Weapon("Плазменная пушка 'Makarov'", 2400, fotos[13], "Продавец-Младший Лейтенант Звездного Флота Российской Империи Александр Игнатов");
+        оружие[14] = new Weapon("Пучковый бластер+Пульсар", 2055, fotos[14], "Продавец-АстроКорова");
+        оружие[15] = new Weapon("Лазерная снайперская винтовка", 1780, fotos[15], "Продавец-Контрабандист Кэрг Одноглазый-Кривозубый-Одногогий-Однорукий-Лысый-Лис-Прохвост младший");
+        оружие[16] = new Weapon("Плазменная снайперская винтовка 'SVD'", 5200, fotos[16], "Продавец-СнайперВременВойнКлонов345");
+        оружие[17] = new Weapon("Гвардейский клинок Литии", 8000, fotos[17], "Продавец-Капитан Литийской Гвардии Джони Дэпп");
+        оружие[18] = new Weapon("Клинок Древних Родонтинов- рассы первого поколения", 120000, fotos[18], "Продавец-Миша");
+        оружие[19] = new Weapon("Кристальный клинок АстроШумеров", 4500, fotos[19], "Продавец-Фермер АстроШумер Гигимарнитсогламур");
+        оружие[20] = new Weapon("Клинок СпэйсЭльфов", 9300, fotos[20], "Продавец-Эланиэль127");
+        оружие[21] = new Weapon("Меч Темной материи", 50000, fotos[21], "Продавец-Главный Трубадур Киргизтана Ашим Нур");
+        оружие[22] = new Weapon("Шокер для Крысолюдов", 20, fotos[22], "Продавец-Покалеченный Генерал Крысолюдов Скавен Муролаз");
 
         ListView listView = (ListView) findViewById(R.id.Табличище);
         int itemLayout = android.R.layout.simple_list_item_1;
@@ -94,4 +114,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 

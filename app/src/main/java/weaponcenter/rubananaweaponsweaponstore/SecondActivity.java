@@ -26,6 +26,7 @@ public class SecondActivity extends AppCompatActivity {
                     .into(imageView);
         }
 
+
         TextView textView = (TextView) findViewById(R.id.textView2);
         textView.setText(weapon.model);  // title
     }
