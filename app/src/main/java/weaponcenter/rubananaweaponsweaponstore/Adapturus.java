@@ -1,7 +1,6 @@
 package weaponcenter.rubananaweaponsweaponstore;
 
 import android.content.Context;
-import android.media.Image;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -12,9 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-
-import static java.security.AccessController.getContext;
-import static weaponcenter.rubananaweaponsweaponstore.R.id.textView;
 
 /**
  * Created by LoneAndroid on 11/6/1918.
@@ -33,7 +29,7 @@ public class Adapturus extends ArrayAdapter {
 
         Weapon weapon = (Weapon) getItem(position);
 
-        TextView textView = (TextView) view.findViewById(R.id.textView2);
+        TextView textView = (TextView) view.findViewById(R.id.model_text_view);
         textView.setText(weapon.model);
 
         TextView textViewW = (TextView) view.findViewById(R.id.textView3);

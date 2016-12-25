@@ -8,8 +8,6 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import java.io.Serializable;
-
 public class SecondActivity extends AppCompatActivity {
 
     @Override
@@ -27,7 +25,16 @@ public class SecondActivity extends AppCompatActivity {
         }
 
 
-        TextView textView = (TextView) findViewById(R.id.textView2);
-        textView.setText(weapon.model);  // title
+        TextView modelTextView = (TextView) findViewById(R.id.model_text_view);
+        modelTextView.setText(weapon.model);  // title
+
+        TextView costTextView = (TextView) findViewById(R.id.cost_text_view);
+        costTextView.setText(String.valueOf(weapon.ценаВМежМировойПятерочке));
+
+        TextView prodavecTextView = (TextView) findViewById(R.id.prodavec_text_view);
+        prodavecTextView.setText(weapon.Продавец);
+
+        TextView infoTextView = (TextView) findViewById(R.id.info_text_view);
+        infoTextView.setText(weapon.Инфо);
     }
 }
