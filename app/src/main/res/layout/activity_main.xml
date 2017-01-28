@@ -20,5 +20,6 @@
     android:layout_height="match_parent"
     android:id="@+id/Табличище"
         android:layout_below="@+id/textView"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="@mipmap/ic_launcher" />
         </RelativeLayout>

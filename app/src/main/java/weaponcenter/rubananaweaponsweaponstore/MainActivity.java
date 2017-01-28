@@ -3,6 +3,7 @@ package weaponcenter.rubananaweaponsweaponstore;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -41,30 +42,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String[] fotos = new String[] {
+        String[] fotos = new String[]{
                 "https://lh3.googleusercontent.com/-cuC8gA_HptY/UkCNmBqWNHI/AAAAAAAAB4Y/6vv_gJeT9Ic/s800/20130923_143839.jpg"
-                ,"http://s00.yaplakal.com/pics/pics_original/7/2/4/2618427.jpg"
-                ,"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTON_Iy5X1YCiqTroDDBk5yBUAFWxiVnzrhqGGJunsH6Dn4FfYu"
-                ,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQahOh_fAvCwnTgLUDPBa9HUzZxd2aAY2P-Vxi4RAQUAPa6ddco"
-                ,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUh8ZuEa9PKDivGtae9DO2_dC5R-55T8SqIzn0SPvdtSUYpgbG6RXpXhc"
-                ,"https://i.ytimg.com/vi/zV0bPd6lQAM/hqdefault.jpg?custom=true&w=168&h=94&stc=true&jpg444=true&jpgq=90&sp=68&sigh=IZNo2mBJ2hi_lw8hlrzSu-yEqoc"
-                ,"http://s01.riotpixels.net/data/94/a3/94a3f484-68cb-4e04-be43-db190dac66b7.png/artwork.xcom-enemy-unknown.1385x799.2012-09-09.161.png"
-                ,"http://i58.photobucket.com/albums/g277/dransifl/IMG_9459-1.jpg"
-                ,"https://pp.vk.me/c618129/v618129093/157e8/RfqNx0Ext1I.jpg"
-                ,"https://johnsonarms.files.wordpress.com/2013/02/20130214-162209.jpg"
-                ,"https://s-media-cache-ak0.pinimg.com/236x/a6/72/b8/a672b86abd11faa7032560c1fb7601fc.jpg"
-                ,"http://orig03.deviantart.net/55de/f/2014/334/b/9/sci_fi_weapon_concept_by_dustycrosley-d887m5c.jpg"
-                ,"https://s-media-cache-ak0.pinimg.com/236x/be/43/c3/be43c3b35d7ec8a4081762ee5bfc5e4b.jpg"
-                ,"http://fc01.deviantart.net/fs70/f/2010/321/2/8/plazma_gun_by_nitro_killer-d332460.jpg"
-                ,"https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b6bf6f34678071.56d950eae8d51.jpg"
-                ,"http://samlib.ru/img/s/shemelin_f_n/engineer/23.jpg"
-                ,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj6DWRK6FFnSZyDHsdOiSMa_k56XzikighMBw_EK1mQtzBjsAkoA"
-                ,"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTTxC5kdkIl3Sz_Mtzq2aR4diZwzF8nFUyXoQyfkgMA-Z6p6HHq"
-                ,"http://pic.xenomorph.ru/2016-09/1474141455_commission_sci_fi_sword_by_ah_kai-d9dv2cq.png.jpg"
-                ,"https://i11.fotocdn.net/s21/96/public_pin_l/303/2539728479.jpg"
-                ,"https://s-media-cache-ak0.pinimg.com/originals/95/ef/67/95ef67f9a45d05c464cccec3b35bda9e.png"
-                ,"https://i08.fotocdn.net/s21/93/public_pin_l/303/2539728476.jpg"
-                ,"https://cdnb1.artstation.com/p/assets/images/images/001/306/681/large/weijian-liew-katana6.jpg?1444066276"
+                , "http://s00.yaplakal.com/pics/pics_original/7/2/4/2618427.jpg"
+                , "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTON_Iy5X1YCiqTroDDBk5yBUAFWxiVnzrhqGGJunsH6Dn4FfYu"
+                , "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQahOh_fAvCwnTgLUDPBa9HUzZxd2aAY2P-Vxi4RAQUAPa6ddco"
+                , "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUh8ZuEa9PKDivGtae9DO2_dC5R-55T8SqIzn0SPvdtSUYpgbG6RXpXhc"
+                , "https://i.ytimg.com/vi/zV0bPd6lQAM/hqdefault.jpg?custom=true&w=168&h=94&stc=true&jpg444=true&jpgq=90&sp=68&sigh=IZNo2mBJ2hi_lw8hlrzSu-yEqoc"
+                , "http://s01.riotpixels.net/data/94/a3/94a3f484-68cb-4e04-be43-db190dac66b7.png/artwork.xcom-enemy-unknown.1385x799.2012-09-09.161.png"
+                , "http://i58.photobucket.com/albums/g277/dransifl/IMG_9459-1.jpg"
+                , "https://pp.vk.me/c618129/v618129093/157e8/RfqNx0Ext1I.jpg"
+                , "https://johnsonarms.files.wordpress.com/2013/02/20130214-162209.jpg"
+                , "https://s-media-cache-ak0.pinimg.com/236x/a6/72/b8/a672b86abd11faa7032560c1fb7601fc.jpg"
+                , "http://orig03.deviantart.net/55de/f/2014/334/b/9/sci_fi_weapon_concept_by_dustycrosley-d887m5c.jpg"
+                , "https://s-media-cache-ak0.pinimg.com/236x/be/43/c3/be43c3b35d7ec8a4081762ee5bfc5e4b.jpg"
+                , "http://fc01.deviantart.net/fs70/f/2010/321/2/8/plazma_gun_by_nitro_killer-d332460.jpg"
+                , "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b6bf6f34678071.56d950eae8d51.jpg"
+                , "http://samlib.ru/img/s/shemelin_f_n/engineer/23.jpg"
+                , "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj6DWRK6FFnSZyDHsdOiSMa_k56XzikighMBw_EK1mQtzBjsAkoA"
+                , "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTTxC5kdkIl3Sz_Mtzq2aR4diZwzF8nFUyXoQyfkgMA-Z6p6HHq"
+                , "http://pic.xenomorph.ru/2016-09/1474141455_commission_sci_fi_sword_by_ah_kai-d9dv2cq.png.jpg"
+                , "https://i11.fotocdn.net/s21/96/public_pin_l/303/2539728479.jpg"
+                , "https://s-media-cache-ak0.pinimg.com/originals/95/ef/67/95ef67f9a45d05c464cccec3b35bda9e.png"
+                , "https://i08.fotocdn.net/s21/93/public_pin_l/303/2539728476.jpg"
+                , "https://cdnb1.artstation.com/p/assets/images/images/001/306/681/large/weijian-liew-katana6.jpg?1444066276"
         };
 
         оружие = new Weapon[23];
@@ -98,23 +99,29 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-          @Override
+            @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-              Weapon  выбранноеОружие = оружие[position];
-              Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-              intent.putExtra("ОРУЖИЕ",выбранноеОружие);
-              startActivity(intent);
-          }
+                Weapon выбранноеОружие = оружие[position];
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra("ОРУЖИЕ", выбранноеОружие);
+                startActivity(intent);
+            }
         });
 
+        try {
 
+            String[] strings = new String[888888888];
+            for (int i = 0; i < 888888888; ++i) {
+                strings[i] = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUUU";
+            }
 
-
-
+            throw new OutOfMemoryError();
+        } catch (OutOfMemoryError e) {
+            Log.v("ОШИБКА", e.toString());
         }
 
-
     }
+}
 
 
 
